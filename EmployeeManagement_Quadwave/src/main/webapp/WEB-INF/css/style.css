@@ -1,0 +1,148 @@
+.main {
+    border: 5px solid #111;
+    border-radius: 20px;
+    padding: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.first {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+.left {
+    text-align: start;
+}
+
+.right {
+    text-align: end;
+}
+
+.add-button {
+    background-color: #1f73fa;
+    border-radius: 15px;
+    border: 2px;
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+
+}
+
+.add-button:hover {
+    letter-spacing: 2px;
+    opacity: .9;
+}
+
+#input {
+    border: 2px solid #000;
+    height: 35px;
+    width: 300px;
+    border-radius: 15px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.model-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .3);
+    transform: scale(0);
+
+}
+
+.model-container .model {
+    height: 400px;
+    max-width: 350px;
+    margin: 0 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.model-container .model h3 {
+    font-size: 25px;
+    color: #222;
+}
+
+.model-container .model p {
+    /* font-size: 20px; */
+    color: #555;
+    margin: 20px 0;
+}
+
+.model-container .model button {
+    height: 35px;
+    width: 120px;
+    margin-top: 25px;
+    background: #1f73fa;
+    color: #000;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.model-container .model button:hover {
+    opacity: .9;
+    letter-spacing: 2px;
+}
+
+.model-container .model span {
+    color: #555;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid #444;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 4px 10px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    cursor: pointer;
+}
+
+.model-container .model span:hover {
+    background-color: rgb(245, 2, 2);
+}
+
+.empDetails {
+    margin: 15px 5px;
+    padding: 0px 30px;
+    text-align: left;
+}
+
+.empDetails input {
+    display: block;
+    width: 100%;
+}

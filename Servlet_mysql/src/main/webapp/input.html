@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.container {
+	display: flex;
+	width: 90%;
+	justify-content: space-between;
+	border: 2px solid black;
+	height: 100px;
+	padding: 15px;
+}
+
+.ButtonBar {
+	background-color: rgb(84, 84, 197);
+	padding: 10px 30px;
+	color: white;
+	border: 3px solid black;
+	cursor: pointer;
+}
+
+.serachBar {
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.emplBar {
+	width: 30%;
+	margin-left: 40%;
+	margin-top: 30px;
+	border: 2px solid black;
+	padding: 10px;
+}
+
+.selectBar {
+	padding: 3px;
+}
+
+.emplyeeDetails {
+	align-items: center;
+	text-align: center;
+	justify-content: space-between;
+}
+
+.series {
+	display: flex;
+	padding-top: 30px;
+}
+
+.EmpName {
+	margin-left: 9px;
+	padding: 3px 20px;
+}
+
+.EmpNum {
+	margin-left: -11px;
+}
+
+.EmpDesg {
+	margin-left: 35px;
+}
+
+.popup {
+	visibility: hidden;
+}
+
+.open-popup {
+	visibility: visible;
+}
+
+.btn-submit {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+</style>
+<body>
+<h2>Welcome to Employee Registration</h2>
+	<div class="container">
+
+		<form action="search" method="post">
+			<div>
+				<input type="search" class="serachBar" id="searchBar"
+					name="empsearch" placeholder="search">
+			</div>
+		</form>
+		<div>
+			<button class="btn" onclick="openPopup()" id="AddButton">ADD</button>
+		</div>
+	</div>
+	<div></div>
+	<form action="add" method="post">
+		<div class="popup" id="popup">
+			<div class="emplBar" id="emplBar">
+				<h4>ADD EMPLOYEE</h4>
+
+				<dl>
+					<div class="series">
+						<dt>EMPLOYEE ID :</dt>
+						<dd>
+							<select name="slct1" id="slct1" class="selectBar"
+								onchange="populate(this.id,'slct2')">
+								<option value="">choose Employee Id</option>
+								<option value="rk">R K</option>
+								<option value="sw">S W</option>
+								<option value="kp">K p</option>
+								<option value="kk">k k</option>
+							</select>
+						</dd>
+					</div>
+					<div class="series">
+						<dt>Employee Name</dt>
+						<dd>
+							<select name="slct2" class="EmpName" id="slct2"></select>
+						</dd>
+					</div>
+					<div class="series">
+						<dt>Year Of Experience</dt>
+						<dd>
+							<input type="number" name="exp" class="EmpNum">
+						</dd>
+					</div>
+					<div class="series">
+						<dt>Designation</dt>
+						<dd>
+							<input type="text" name="deg" class="EmpDesg">
+						</dd>
+					</div>
+				</dl>
+				<div class=" btn-submit">
+					<button>Submit</button>
+					<input type="button" value="Cancel" onclick="closePopup()">
+				</div>
+	</form>
+	</div>
+	</div>
+	</div>
+	<script>
+		let popup = document.getElementById("popup");
+		function openPopup() {
+			popup.classList.add("open-popup")
+		}
+		function closePopup() {
+			popup.classList.remove("open-popup")
+		}
+
+		function populate(s1, s2) {
+			var s1 = document.getElementById(s1);
+			var s2 = document.getElementById(s2);
+
+			s2.innerHTML = "";
+			if (s1.value == "rk") {
+				var optionArray = [ 'Rahul kuma|Rahul kumar' ];
+			} else if (s1.value == "sw") {
+				var optionArray = [ 'Swapnil bhagat | Swapnil bhagat' ];
+			} else if (s1.value == "kp") {
+				var optionArray = [ 'Ketan Pise|Ketan Pise' ];
+			} else if (s1.value == "kk") {
+				var optionArray = [ 'KewalKhondekar|KewalKhondekar' ];
+			}
+			for ( var option in optionArray) {
+				var pair = optionArray[option].split("|");
+				var newoption = document.createElement("option");
+				newoption.value = pair[1];
+				newoption.innerHTML = pair[0];
+				s2.options.add(newoption);
+			}
+		}
+	</script>
+</body>
+</html>

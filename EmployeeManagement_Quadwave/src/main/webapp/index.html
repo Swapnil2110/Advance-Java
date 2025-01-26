@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Quadwave</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./WEB-INF/js/script.js"></script>
+  <link rel="stylesheet" href="./WEB-INF/css/style.css">
+</head>
+
+<body>
+  <!-- for search box and add button -->
+  <h2>Employee Details</h2>
+
+
+
+  <section class="main">
+    <div class="first">
+      <!-- <p>Type something in the input field to search the table for first names, last names or emails:</p>   -->
+      <div class="left">
+        <input id="myInput" type="text" placeholder="Search..">
+      </div>
+      <div class="right">
+        <button class="add-button" id="open">Add</button>
+      </div>
+      <br><br>
+
+    </div>
+
+    <!-- model for add employee -->
+    <div class="model-container">
+      <div class="model">
+        <h3>Add Employee</h3>
+        <span id="close">X</span>
+        <!-- <p>
+          Add Employee
+        </p> -->
+        <form>
+          <div class="empDetails">
+            <label for="empID">Employee ID:</label>
+            <input type="text" name="empID" id="empID">
+          </div>
+          <div class="empDetails">
+            <label for="empName">Employee Name:</label>
+            <input type="text" name="empName" id="empName">
+          </div>
+          <div class="empDetails">
+            <label for="exp">Year of Experience:</label>
+            <input type="number" name="exp" id="exp">
+          </div>
+          <div class="empDetails">
+            <label for="desg">Designation:</label>
+            <input type="text" name="desg" id="desg">
+          </div>
+          <!-- <button>Ok</button> -->
+          
+          <button id="closebtn">Cancel</button>
+
+        </form>
+
+      </div>
+    </div>
+
+    <!-- div for view employee inside of a table -->
+    <div class="view">
+      <table>
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+          </tr>
+          <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@mail.com</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@greatstuff.com</td>
+          </tr>
+          <tr>
+            <td>Anja</td>
+            <td>Ravendale</td>
+            <td>a_r@test.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+
+</body>
+
+</html>
